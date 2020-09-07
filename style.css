@@ -1,0 +1,101 @@
+body{
+
+    background-position: 0% 100%;
+    /* Image from: https://wallpaper-house.com/wallpaper-id-373651.php */
+    background-image: url("./momo/newBG.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid black;
+    font-family:sans-serif;
+    line-height: 32px;
+    background: white;
+}
+
+.container  h1{
+    color: white;
+    font-size: 4rem;
+    font-family: Herculanum, Helvetica, sans-serif;
+    text-shadow: -3px 5px 3px rgba(0,0,0,0.7),
+                2px -5px 5px rgba(0,0,0,0.7);
+}
+
+.container h2{
+    padding: 2% 0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Herculanum, Helvetica, sans-serif;
+    background-color: #F8F0CA;
+}
+
+/* Image from :https://emojipedia.org/facebook/2.1/dumpling/ */
+
+.container ul{
+    width: 35%;
+    margin: auto;
+    list-style-image: url("./momo/dumplingIcon.png");
+
+}
+.container ol{
+    width: 65%;
+    margin: auto;
+}
+
+.container  li{
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+
+.container .mainImage{
+    width: 100%;
+    height: 100%;
+    padding: 15% 0 5% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    /* Image from: https://www.foodnetwork.com/recipes/nepali-momo-4635126 */
+    background-image: url("./momo/momoMain.jpeg");
+    text-align: center;
+    color: rgb(85, 85, 85);
+    /* box-shadow: -10px 10px 3px rgba(0,0,0,0.12); */
+}
+
+.container .description{
+    padding:0 7%;
+}
+
+.container .actualVideo{
+    width: 560px;
+    margin: 0 auto;
+}
+
+.container .learnMore{
+    padding-bottom: 5%;
+}
+
+.container .footer{
+    background: rgb(53, 53, 53);
+   padding: 16px 0;
+}
+
+.container .footer .endingText{
+    line-height: 20px;
+    color: white;
+    font-size: 0.7rem;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.container .footer .endingText a{
+    color:white;
+}
+
+
