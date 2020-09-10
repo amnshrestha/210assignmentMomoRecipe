@@ -10,6 +10,19 @@ a{
     text-decoration: none;
 }
 
+button{
+    border-radius: 5px;
+    width: 30px;
+}
+
+.add{
+    background-color: #caeaf8;
+}
+
+.remove{
+    background-color:#f8cada;
+}
+
 .container{
     margin: 0 auto;
     width: 50%;
