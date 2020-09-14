@@ -15,6 +15,11 @@ button{
     width: 30px;
 }
 
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .add{
     background-color: #caeaf8;
 }
@@ -109,6 +114,13 @@ button{
 
 .container .footer .endingText a{
     color:white;
+}
+
+
+#addIns, #addButton{
+    background-color: #F8F0CA;
+    border: 1px solid;
+    border-radius: 5px;
 }
 
 

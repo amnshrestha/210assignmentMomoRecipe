@@ -1,76 +1,3 @@
-// don't execute any JS until after the DOM is loaded
-// counterIngredients = -1;
-// counterInstruction = -1;
-// document.addEventListener("DOMContentLoaded", function () {
-
-// 	// create "handles" on the buttons from the HTML
-// 	var showIngredients = document.getElementById("showIngredients");
-// 	var showInstruction = document.getElementById("showInstruction");
-// 	var hideIngredients = document.getElementById("hideIngredients");
-// 	var hideInstructions = document.getElementById("hideInstructions");
-
-// 	// create "handles" on the lists
-// 	var listOfIngredients = document.getElementById("listOfIngredients");
-// 	var listOfInstructions = document.getElementById("listOfInstructions");
-
-// 	// get the lengths of the lists
-// 	legthOfIngredients = listOfIngredients.children.length;
-// 	legthOfInstructions = listOfInstructions.children.length;
-
-
-// 	initiateDisplayNone(legthOfIngredients, listOfIngredients);
-// 	initiateDisplayNone(legthOfInstructions, listOfInstructions);
-
-// 	showStuff(showIngredients, legthOfIngredients, listOfIngredients);
-// 	showStuff(showInstruction, legthOfInstructions, listOfInstructions);
-
-
-// 	hideStuff(hideIngredients, listOfIngredients);
-// 	hideStuff(hideInstructions, listOfInstructions);
-
-// });
-
-// function initiateDisplayNone(length, obj) {
-// 	for (var i = 0; i < length; i++) {
-// 		obj.children[i].style.display = "none";
-// 	}
-// }
-
-// function showStuff(button, lengthOfStuff, listOfStuff) {
-
-// 	button.addEventListener("click", function () {
-// 		var counter = button.value === "displayIngredients" ? counterIngredients : counterInstruction;
-// 		if (counter < lengthOfStuff - 1) {
-// 			counter++;
-// 			listOfStuff.children[counter].style.display = "revert";
-// 		}
-// 		if (counter >= lengthOfStuff) counter = lengthOfStuff - 1;
-// 		if (button.value === "displayIngredients") {
-// 			counterIngredients = counter;
-// 		} else {
-// 			counterInstruction = counter;
-// 		}
-// 	});
-// }
-
-// function hideStuff(button, listOfStuff) {
-
-// 	button.addEventListener("click", function () {
-// 		var counter = button.value === "removeIngredients" ? counterIngredients : counterInstruction;
-// 		if (counter >= 0) {
-// 			listOfStuff.children[counter].style.display = "none";
-// 			counter--;
-// 		}
-// 		if (counter < 0) counter = -1;
-// 		if (button.value === "removeIngredients") {
-// 			counterIngredients = counter;
-// 		} else {
-// 			counterInstruction = counter;
-// 		}
-// 	});
-// }
-
-
 $(document).ready(function () {
 
 	//Previous assignment recreated
@@ -150,37 +77,25 @@ $(document).ready(function () {
 	}
 
 	function showStuff(valueOfString, listOfStuff) {
-		var counter = valueOfString === "displayIngredients" ? counterIngredients : counterInstruction;//checks which list
-		var lengthOfStuff = valueOfString === "displayIngredients" ? dynLengthIngredients : dynLengthInstructions;//checks which list
-		if (counter < lengthOfStuff - 1) {
-			counter++;
-			$(listOfStuff.children().get(counter)).show();
-		}
-		if (counter >= lengthOfStuff) counter = lengthOfStuff - 1;
-		if (valueOfString === "displayIngredients") {
-			counterIngredients = counter;
-		} else {
-			counterInstruction = counter;
+
+		for (var i = 0; i < $(listOfStuff.children()).length; i++) {//loop through everything and find one that's not visible
+			if (!$(listOfStuff.children().get(i)).is(":visible")) {
+				$(listOfStuff.children().get(i)).show();//show that one
+				break;
+			}
 		}
 	}
 
 
 	function hideStuff(buttonID, listOfStuff) {
-		var counter = buttonID === "removeIngredients" ? counterIngredients : counterInstruction;
-		if (counter >= 0) {
-			$(listOfStuff.children().get(counter)).hide();
-			counter--;
+
+		for (var i = 0; i < $(listOfStuff.children()).length; i++) {//loop through everything and find one that's visible
+			if ($(listOfStuff.children().get(i)).is(":visible")) {
+				$(listOfStuff.children().get(i)).hide();//hide that oen
+				break;
+			}
 		}
 
-		if (counter < 0) {
-			$(listOfStuff.children()).hide();//remove all added elements at once
-			counter = -1;
-		}
-		if (buttonID === "removeIngredients") {
-			counterIngredients = counter;
-		} else {
-			counterInstruction = counter;
-		}
 	}
 
 
